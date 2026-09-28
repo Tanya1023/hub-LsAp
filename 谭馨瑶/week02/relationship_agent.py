@@ -1,6 +1,3 @@
-# 姓名：谭馨瑶
-# week2 作业：人物关系抽取
-# 运行前设置环境变量 SILICONFLOW_API_KEY，并安装 openai。
 # 人物关系抽取智能体
 # 输入：一段描述人物关系的中文文本。
 # 输出：包含 source、relation、target 的 JSON 数组。
@@ -10,7 +7,7 @@ import os
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=os.environ["SILICONFLOW_API_KEY"], 
+    api_key="sk-", 
     base_url="https://api.siliconflow.cn/v1",
 )
 
@@ -42,4 +39,3 @@ response = client.chat.completions.create(
 
 # 查看模型回复
 print(response.choices[0].message.content)
-
